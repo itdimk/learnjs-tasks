@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function truncate(str, maxLength) {
+            const ending = '…';
+            if (str.length > maxLength)
+                return str.substring(0, maxLength - ending.length) + ending;
+            return str;
+        }
+        
+        alert(truncate('Abcdefghijk', 5))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

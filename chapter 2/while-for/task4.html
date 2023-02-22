@@ -1,0 +1,27 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<script>
+    const fromNumber = 2;
+    const toNumber = 10;
+
+    for (let i = fromNumber; i <= toNumber; ++i) {
+        
+        let isPrime = true;
+        for (let x = fromNumber; x < i; ++x)
+            isPrime &= (i % x !== 0)
+
+        if (isPrime)
+            alert(i);
+    }
+</script>
+<body>
+
+</body>
+</html>

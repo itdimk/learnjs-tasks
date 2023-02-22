@@ -1,0 +1,39 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function multiplyNumeric(obj) {
+            for (let key in obj) {
+                if (typeof obj[key] === 'number')
+                    obj[key] *= 2
+            }
+        }
+
+        // до вызова функции
+        let menu = {
+            width: 200,
+            height: 300,
+            title: "My menu"
+        };
+        console.log(menu);
+        multiplyNumeric(menu);
+        console.log(menu);
+
+        // после вызова функции
+        // menu = {
+        //     width: 400,
+        //     height: 600,
+        //     title: "My menu"
+        // };
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
