@@ -1,0 +1,23 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function getSecondsToday(today = new Date()) {
+            const hours = today.getHours();
+            const minutes = today.getMinutes();
+            const seconds = today.getSeconds();
+            return hours * 3600 + minutes * 60 + seconds;
+        }
+        
+        alert(getSecondsToday())
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function sumSalaries(salaries) {
+            return Object.values(salaries).reduce((acc, val) => acc + val)
+        }
+
+        let salaries = {
+            "John": 100,
+            "Pete": 300,
+            "Mary": 250
+        };
+
+        alert(sumSalaries(salaries)); // 650
+    </script>
+</head>
+<body>
+
+</body>
+</html>

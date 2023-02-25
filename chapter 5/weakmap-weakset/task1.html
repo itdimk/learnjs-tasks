@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let messages = [
+            {text: "Hello", from: "John"},
+            {text: "How goes?", from: "John"},
+            {text: "See you soon", from: "Alice"}
+        ];
+        
+        const read = new WeakSet()
+        
+        read.add(messages[0])
+        read.add(messages[1])
+        read.add(messages[2])
+        
+        alert(read.has(messages[0]))
+        delete messages[0]
+        alert(read.has(messages[0]))
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

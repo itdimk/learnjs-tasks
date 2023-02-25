@@ -1,0 +1,41 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function sort(str) {
+            const array = Array.from(str)
+            array.sort()
+            const result = array.join('')
+            console.log(result)
+            return result
+        }
+
+        function aclean(arr) {
+            const set = new Set()
+            const uniqueSet = new Set()
+
+            for (let item of arr) {
+                const uniqueItem = sort(item.toLowerCase())
+                
+                if (!uniqueSet.has(uniqueItem)) {
+                    uniqueSet.add(uniqueItem)
+                    set.add(item)
+                }
+            }
+            return Array.from(set)
+        }
+
+        let arr = ["nap", "teachers", "cheaters", "PAN", "ear", "era", "hectares"];
+
+        alert(aclean(arr)); // "nap,teachers,ear" или "PAN,cheaters,era"
+    </script>
+</head>
+<body>
+
+</body>
+</html>
