@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        const slowFib = (n) => n <= 1 ? n : slowFib(n - 1) + slowFib(n - 2)
+
+        function fib(n) {
+            let prev2 = 1
+            let prev1 = 0
+            let current = 0
+
+            while (n-- > 0) {
+                current = prev1 + prev2
+                prev2 = prev1
+                prev1 = current
+            }
+            return current
+        }
+
+        alert(fib(3))
+        alert(fib(7))
+        alert(fib(77))
+    </script>
+</head>
+<body>
+
+</body>
+</html>

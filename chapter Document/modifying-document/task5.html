@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="./task5.css">
+    <title>Clock</title>
+</head>
+<body>
+
+<div id="clock">
+    <span class="hours">00</span>:<span class="min">00</span>:<span class="sec">00</span>
+</div>
+
+<!-- клик по этой кнопке вызовет clockStart() -->
+<input type="button" onclick="clockStart()" value="Старт">
+
+<!-- клик по этой кнопке вызовет clockStop() -->
+<input type="button" onclick="clockStop()" value="Стоп">
+
+</body>
+<script>
+    let currentDate = new Date(0, 0, 0, 0, 0, 0)
+    const hours = document.querySelector('.hours')
+    const min = document.querySelector('.min')
+    const sec = document.querySelector('.sec')
+    let interval;
+
+    function refresh() {
+        hours.innerText = String(currentDate.getHours()).padStart(2, '0')
+        min.innerText = String(currentDate.getMinutes()).padStart(2, '0')
+        sec.innerText = String(currentDate.getSeconds()).padStart(2, '0')
+    }
+
+    function clockStart() {
+        interval = setInterval(() => {
+            refresh()
+            currentDate.setSeconds(currentDate.getSeconds() + 1)
+        }, 1000)
+    }
+
+    function clockStop() {
+        clearInterval(interval)
+    }
+</script>
+</html>

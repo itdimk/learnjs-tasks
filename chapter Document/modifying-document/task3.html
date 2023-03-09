@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    function createTree(obj) {
+        if (Object.keys(obj).length === 0) return
+
+        const ul = document.createElement('ul')
+
+        for (let key of Object.keys(obj)) {
+            const li = document.createElement('li')
+            li.innerText = key
+
+            const subUl = createTree(obj[key])
+            subUl && li.append(subUl)
+
+            ul.append(li)
+        }
+
+        return ul
+    }
+
+    let data = {
+        "Рыбы": {
+            "форель": {},
+            "лосось": {}
+        },
+
+        "Деревья": {
+            "Огромные": {
+                "секвойя": {},
+                "дуб": {}
+            },
+            "Цветковые": {
+                "яблоня": {},
+                "магнолия": {}
+            }
+        }
+    };
+
+    document.body.insertAdjacentElement('afterbegin', createTree(data))
+</script>
+</html>

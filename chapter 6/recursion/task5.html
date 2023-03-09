@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        let list = {
+            value: 1,
+            next: {
+                value: 2,
+                next: {
+                    value: 3,
+                    next: {
+                        value: 4,
+                        next: null
+                    }
+                }
+            }
+        };
+
+        function printReverse(list) {
+            if (list.next)
+                printReverse(list.next)
+            alert(list.value)
+        }
+
+        function printReverse2(list) {
+            const values = []
+            while (list) {
+                values.push(list.value)
+                list = list.next
+            }
+            values.reverse().forEach(alert)
+        }
+
+
+        printReverse(list)
+        printReverse2(list)
+    </script>
+</head>
+<body>
+
+</body>
+</html>

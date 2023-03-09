@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        // With FOR
+        function sumTo1(n) {
+            let result = 0
+            for (let i = 1; i <= n; ++i)
+                result += i
+            return result
+        }
+        
+        alert(sumTo1(4))
+        alert(sumTo1(100))
+        
+        // With Recursion
+        function sumTo2(n) {
+            if(n > 1)
+                return n + sumTo2(n - 1)
+            return n
+        }
+
+        alert(sumTo2(4))
+        alert(sumTo2(100))
+        
+        // With Progression
+        function sumTo3(n) {
+            return n * (n + 1) / 2;
+        }
+
+        alert(sumTo3(4))
+        alert(sumTo3(100))
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

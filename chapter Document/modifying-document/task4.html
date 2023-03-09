@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<table id="calendar">
+
+</table>
+</body>
+<script>
+    const weekDays = ['пн', 'вт', 'ср', 'чт', 'пт', 'сб', 'вс']
+
+    function createElement(tag, innerText) {
+        const result = document.createElement(tag)
+        result.innerText = innerText
+        return result
+    }
+
+    function getWeekHeader() {
+        const tr = document.createElement('tr')
+        tr.append(...weekDays.map(w => createElement('th', w)))
+        return tr
+    }
+
+    function createTable(elem, year, month) {
+        elem.append(getWeekHeader())
+
+        const date = new Date(year, month)
+        console.log(date)
+        const offset = date.getDay();
+        const totalDays = new Date(year, month + 1, 0).getDate()
+        let day = 1;
+
+        for (let y = 0; y < 5; ++y) {
+
+            let tr = document.createElement('tr')
+            for (let x = 0; x < 7; ++x) {
+
+                const td = document.createElement('td')
+
+                if (++day > offset && (day - offset) <= totalDays)
+                    td.innerText = (day - offset) + ''
+                tr.append(td)
+            }
+
+            elem.append(tr)
+        }
+    }
+
+
+    const calendar = document.getElementById('calendar')
+    createTable(calendar, 2023, 2)
+</script>
+</html>
