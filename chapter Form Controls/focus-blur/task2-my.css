@@ -1,0 +1,8 @@
+.edit {
+    border: none;
+    margin: 0;
+    outline: none;
+    white-space: nowrap;
+    text-align: center;
+    resize: none;
+}

@@ -1,0 +1,56 @@
+.arrow {
+    padding: 0;
+    background: #ddd;
+    border-radius: 15px;
+    border: 1px solid gray;
+    font-size: 24px;
+    line-height: 24px;
+    color: #444;
+    display: block;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+}
+
+.arrow.left {
+    left: 0
+}
+
+.arrow.right {
+    right: 0
+}
+
+.arrow:focus {
+    outline: none;
+}
+
+.arrow:hover {
+    background: #ccc;
+    cursor: pointer;
+}
+
+ul {
+    height: 130px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 0;
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+ul img {
+    width: 130px;
+    height: 130px;
+    display: block; /* убираем пустое место вокруг картинок */
+}
+
+ul li {
+    display: inline-block; /* убираем пустое место между элементами списка */
+}
+
+.wrapper {
+    position: relative;
+    max-width: 500px;
+    overflow-x: hidden;
+}

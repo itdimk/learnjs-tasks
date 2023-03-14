@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="task6.css">
+</head>
+
+<body>
+
+
+<div class="wrapper">
+    <button class="arrow left">⇦</button>
+    <button class="arrow right">⇨</button>
+    <ul>
+        <li><img src="https://ru.js.cx/carousel/1.png"></li>
+        <li><img src="https://ru.js.cx/carousel/2.png"></li>
+        <li><img src="https://ru.js.cx/carousel/3.png"></li>
+        <li><img src="https://ru.js.cx/carousel/4.png"></li>
+        <li><img src="https://ru.js.cx/carousel/5.png"></li>
+        <li><img src="https://ru.js.cx/carousel/6.png"></li>
+        <li><img src="https://ru.js.cx/carousel/7.png"></li>
+        <li><img src="https://ru.js.cx/carousel/8.png"></li>
+        <li><img src="https://ru.js.cx/carousel/9.png"></li>
+        <li><img src="https://ru.js.cx/carousel/10.png"></li>
+    </ul>
+</div>
+
+
+<script>
+    const arrowLeft = document.querySelector('.arrow.left')
+    const arrowRight = document.querySelector('.arrow.right')
+    const ul = document.querySelector('ul')
+    const li = document.querySelector('ul li')
+    let offset = 0
+
+    function setOffsetClamped(newOffset) {
+        offset = Math.max(Math.min(newOffset, 0), -ul.scrollWidth + ul.clientWidth)
+    }
+
+    arrowLeft.onclick = function () {
+        setOffsetClamped(offset + li.offsetWidth)
+        ul.style.transform = `translateX(${offset}px)`
+    }
+
+    arrowRight.onclick = function () {
+        setOffsetClamped(offset - li.offsetWidth)
+        ul.style.transform = `translateX(${offset}px)`
+    }
+
+</script>
+
+</body>
+</html>
